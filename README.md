@@ -7,13 +7,40 @@
 ![Status](https://img.shields.io/badge/status-educational%20lab-yellow)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
+
+## Overview
+
 Educational SDR laboratory for extracting and decoding **Radio Data System (RDS)** information from a commercial FM broadcast station. The RDS subcarrier is isolated from the FM multiplex, translated to baseband, synchronized, interpreted as a **BPSK** signal, and decoded into valid RDS groups.
 
 This repository follows a technical and educational style: real IQ capture, FM demodulation, spectral analysis, FIR filtering, carrier recovery, BPSK visualization, bit extraction, RDS block validation, Program Identification (PI), Program Service name (PS), and RadioText (RT) reconstruction.
 
 > The `figuras_rds_A/` folder name is intentionally preserved because the analysis script writes figures there by default. The included images are placeholders and should be replaced by the real plots generated after running Part A.
 
----
+## 📂 Contents
+
+-  **src** → Python code for SDR capture, demodulation, and spectrum analysis    
+
+
+## 🧰 Hardware Setup
+
+The measurements were performed using a **low-cost RTL-SDR USB dongle** connected to a standard FM broadcast antenna.
+
+### Device
+
+- **SDR Receiver:** RTL-SDR (RTL2832U compatible)
+- **Frequency Band:** FM broadcast band
+- **Interface:** USB
+- **Antenna:** Wideband FM antenna
+- Local FM station with RDS transmission.
+
+If an IQ capture is already available in `.npz` format, the RTL-SDR is not required.
+
+The RTL-SDR is used exclusively for **IQ data acquisition**, while all signal processing is performed offline in Python.
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/d929ca5d-2eb0-4496-8d00-b7ccac389ebc" alt="SDR-RTL" width="400">
+</p>
+
 
 ## 🚀 Main Scripts
 
@@ -77,59 +104,10 @@ samples per RDS bit/symbol interval.
 
 ## 🔄 Processing Pipeline
 
-```text
-RTL-SDR IQ capture
-        │
-        ▼
-FM channel filtering
-        │
-        ▼
-Amplitude limiting
-        │
-        ▼
-FM demodulation
-        │
-        ▼
-FM multiplex at 228 kHz
-        │
-        ▼
-RDS bandpass filtering around 57 kHz
-        │
-        ▼
-Baseband translation
-        │
-        ├── route 1: 19 kHz pilot cubed
-        └── route 2: fixed 57 kHz oscillator
-        │
-        ▼
-RDS low-pass filtering
-        │
-        ▼
-Resampling to 19 kHz
-        │
-        ▼
-Residual carrier correction
-        │
-        ▼
-BPSK Costas loop
-        │
-        ▼
-PCA rotation for BPSK alignment
-        │
-        ▼
-Biphase bit metric
-        │
-        ▼
-Bitstream candidates
-        │
-        ▼
-RDS block validation
-        │
-        ▼
-PI, PS and RadioText reconstruction
-```
 
----
+<p align="center">
+<img src="https://github.com/user-attachments/assets/d17cb44d-b7ff-46bd-ac04-9cd472b718e4" alt="pipeline" width="400">
+</p>
 
 ## 🧠 Key DSP Blocks
 
@@ -219,54 +197,46 @@ The most relevant figures are reserved in `figuras_rds_A/`. Replace the placehol
 
 ### 📊 FM Multiplex Spectrum and RDS Zoom
 
-![FM multiplex spectrum and RDS zoom](figuras_rds_A/A1_espectro_mpx_y_rds.png)
+<p align="center">
+<img src="https://github.com/user-attachments/assets/52885f3c-bbdd-46f3-8001-adc849a0646c" alt="RDS zoom" width="400">
+</p>
 
----
+###  FM Multiplex Spectrogram
 
-### 🌈 FM Multiplex Spectrogram
 
-![FM multiplex spectrogram](figuras_rds_A/A2_espectrograma_mpx_rds.png)
+<p align="center">
+<img src="https://github.com/user-attachments/assets/9312ddc0-788a-43d1-80da-114d14b9794a" alt="espectro" width="400">
+</p>
 
----
 
 ### 🧩 RDS Extraction Stages
 
 ![RDS extraction stages](figuras_rds_A/A3_etapas_extraccion_rds.png)
 
----
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/e54c2d56-cbb1-4b4e-8ef2-809ece1f6817" alt="extraction" width="400">
+</p>
 
 ### 🔢 RDS Bitstream Extraction
 
-![RDS bitstream extraction](figuras_rds_A/A4_resumen_extraccion_trama_rds.png)
-
----
+<p align="center">
+<img src="https://github.com/user-attachments/assets/1a76582f-2a48-4dd4-93af-097ec4e05ad0" alt="extraction2" width="400">
+</p>
 
 ### 🟣 BPSK Time Signal and Validated Constellation
 
-![BPSK time signal and constellation](figuras_rds_A/A5_bpsk_tiempo_y_constelacion_clara.png)
+<p align="center">
+<img src="https://github.com/user-attachments/assets/d194a9f7-1615-4cb5-a17c-efda64b234e2" alt="constelation" width="400">
+</p>
 
----
 
 ### 🧾 Validated 104-bit RDS Group
 
-![Validated 104-bit RDS group](figuras_rds_A/A6_trama_rds_104_bits.png)
+<p align="center">
+<img src="https://github.com/user-attachments/assets/c128151a-69d4-49a1-b16a-d8fb4e41cf0b" alt="constelation" width="400">
+</p>
 
----
-
-## 🛠️ Requirements
-
-### Optional Hardware
-
-To capture real FM signals:
-
-- RTL-SDR compatible receiver.
-- FM antenna.
-- Computer running Python.
-- Local FM station with RDS transmission.
-
-If an IQ capture is already available in `.npz` format, the RTL-SDR is not required.
-
----
 
 ## 📦 Python Dependencies
 
@@ -287,45 +257,6 @@ On Linux, RTL-SDR system libraries may also be required:
 ```bash
 sudo apt install rtl-sdr librtlsdr-dev
 ```
-
----
-
-## ⚙️ Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/CrissCCL/FM-RDS-BPSK-SDR-Lab.git
-cd FM-RDS-BPSK-SDR-Lab
-```
-
-Create a virtual environment:
-
-```bash
-python -m venv .venv
-```
-
-Activate it:
-
-### Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-### Linux / macOS
-
-```bash
-source .venv/bin/activate
-```
-
-Install the dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
 
 ## 🧪 Running Part A: Analysis and Figure Generation
 
@@ -450,7 +381,7 @@ RadioText:
 Consolidated RT: 'Recovered text from the FM station'
 ```
 
----
+
 
 ## 🧑‍🏫 Educational Use
 
@@ -469,7 +400,7 @@ This project can be used in courses or workshops related to:
 - digital frame decoding,
 - error detection and block validation.
 
----
+
 
 ## 🧰 Suggested Future Improvements
 
@@ -481,3 +412,30 @@ This project can be used in courses or workshops related to:
 - Compare multiple FM stations in a single report.
 - Add unit tests for the RDS syndrome and block validation functions.
 - Add an optional graphical interface for selecting frequency and capture settings.
+
+
+## 📚 References
+
+- GNU Radio – Official Documentation: [GNU Radio](https://www.gnuradio.org/)
+
+- Frequency Modulation (FM) – Wikipedia: [Wikipedia Frequency Modulation](https://en.wikipedia.org/wiki/Frequency_modulation)
+
+- FM broadcasting – Wikipedia: [FM broadcasting](https://en.wikipedia.org/wiki/FM_broadcasting)
+
+
+## ⚠️ Disclaimer
+
+This project is intended **for educational and experimental purposes only**.
+
+It is provided to demonstrate signal processing concepts related to FM broadcast reception and spectrum analysis.  
+The author does not encourage or endorse any unauthorized or improper use of radio equipment.
+
+Users are responsible for ensuring compliance with **local laws and regulations** regarding radio reception and spectrum usage.
+
+## 🤝 Support projects
+ Support me on Patreon [https://www.patreon.com/c/CrissCCL](https://www.patreon.com/c/CrissCCL)
+
+## 📜 License
+MIT License  
+
+
