@@ -49,7 +49,7 @@ The RTL-SDR is used exclusively for **IQ data acquisition**, while all signal pr
 | `src/part_a_rds_analysis.py` | Captures or loads IQ data, demodulates FM, analyzes the FM multiplex, extracts the RDS component, validates BPSK behavior, and generates didactic figures. |
 | `src/part_b_rds_decoding.py` | Processes the IQ capture, searches for valid RDS groups, consolidates the dominant PI, reconstructs PS by segment voting, and extracts RadioText when enough segments are available. |
 
----
+
 
 ## 🎯 Laboratory Goals
 
@@ -70,7 +70,7 @@ The RTL-SDR is used exclusively for **IQ data acquisition**, while all signal pr
   - PS: Program Service name,
   - RT: RadioText.
 
----
+
 
 ## 📡 RDS in the FM Multiplex
 
@@ -100,7 +100,6 @@ which gives:
 
 samples per RDS bit/symbol interval.
 
----
 
 ## 🔄 Processing Pipeline
 
@@ -121,7 +120,7 @@ x_{FM}[n] = \angle\left(x[n] \cdot x^*[n-1]\right)
 
 where `x[n]` is the complex IQ signal.
 
----
+
 
 ### 🔹 2. RDS Band Extraction
 
@@ -131,7 +130,7 @@ The RDS component is isolated using a bandpass filter around the 57 kHz subcarri
 54\,\text{kHz} \leq f \leq 60\,\text{kHz}
 ```
 
----
+
 
 ### 🔹 3. Baseband Translation
 
@@ -144,13 +143,13 @@ Two routes are implemented:
 
 Using both routes improves robustness when different stations exhibit different RDS recovery behavior.
 
----
+
 
 ### 🔹 4. BPSK Carrier Recovery
 
 A BPSK Costas loop is used to stabilize the recovered baseband phase. A PCA-based rotation is then applied to align the BPSK symbol cloud with the in-phase axis.
 
----
+
 
 ### 🔹 5. Biphase Bit Metric
 
@@ -165,7 +164,7 @@ m_k =
 
 The sign of this metric is used to estimate the corresponding bit state.
 
----
+
 
 ### 🔹 6. RDS Group Validation
 
@@ -308,7 +307,7 @@ This stage reports:
 - RadioText segments,
 - reconstructed RadioText when enough segments are available.
 
----
+
 
 ## 🔍 Search Modes
 
@@ -317,16 +316,9 @@ The scripts include automatic synchronization search options so the lab is not t
 ```python
 SEARCH_MODE = "AUTO"
 ```
-
-For a previously characterized station, a preset mode can be used:
-
-```python
-SEARCH_MODE = "PRESET_CAROLINA"
-```
-
 For general laboratory use, `AUTO` is recommended.
 
----
+
 
 ## 💾 IQ Capture Naming
 
@@ -346,7 +338,6 @@ fm_rds_iq_98_9MHz.npz
 
 This avoids accidentally analyzing an old capture from a different station.
 
----
 
 ## ✅ Expected Output
 
