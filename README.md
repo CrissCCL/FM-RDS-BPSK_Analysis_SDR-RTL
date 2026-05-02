@@ -106,7 +106,7 @@ samples per RDS bit/symbol interval.
 
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/d17cb44d-b7ff-46bd-ac04-9cd472b718e4" alt="pipeline" width="400">
+<img src="https://github.com/user-attachments/assets/d17cb44d-b7ff-46bd-ac04-9cd472b718e4" alt="pipeline" width="600">
 </p>
 
 ## 🧠 Key DSP Blocks
@@ -198,14 +198,14 @@ The most relevant figures are reserved in `figuras_rds_A/`. Replace the placehol
 ### 📊 FM Multiplex Spectrum and RDS Zoom
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/52885f3c-bbdd-46f3-8001-adc849a0646c" alt="RDS zoom" width="400">
+<img src="https://github.com/user-attachments/assets/52885f3c-bbdd-46f3-8001-adc849a0646c" alt="RDS zoom" width="600">
 </p>
 
 ###  FM Multiplex Spectrogram
 
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/9312ddc0-788a-43d1-80da-114d14b9794a" alt="espectro" width="400">
+<img src="https://github.com/user-attachments/assets/9312ddc0-788a-43d1-80da-114d14b9794a" alt="espectro" width="600">
 </p>
 
 
@@ -215,26 +215,26 @@ The most relevant figures are reserved in `figuras_rds_A/`. Replace the placehol
 
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/e54c2d56-cbb1-4b4e-8ef2-809ece1f6817" alt="extraction" width="400">
+<img src="https://github.com/user-attachments/assets/e54c2d56-cbb1-4b4e-8ef2-809ece1f6817" alt="extraction" width="600">
 </p>
 
 ### 🔢 RDS Bitstream Extraction
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/1a76582f-2a48-4dd4-93af-097ec4e05ad0" alt="extraction2" width="400">
+<img src="https://github.com/user-attachments/assets/1a76582f-2a48-4dd4-93af-097ec4e05ad0" alt="extraction2" width="600">
 </p>
 
 ### 🟣 BPSK Time Signal and Validated Constellation
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/d194a9f7-1615-4cb5-a17c-efda64b234e2" alt="constelation" width="400">
+<img src="https://github.com/user-attachments/assets/d194a9f7-1615-4cb5-a17c-efda64b234e2" alt="constelation" width="600">
 </p>
 
 
 ### 🧾 Validated 104-bit RDS Group
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/c128151a-69d4-49a1-b16a-d8fb4e41cf0b" alt="constelation" width="400">
+<img src="https://github.com/user-attachments/assets/c128151a-69d4-49a1-b16a-d8fb4e41cf0b" alt="constelation" width="600">
 </p>
 
 
