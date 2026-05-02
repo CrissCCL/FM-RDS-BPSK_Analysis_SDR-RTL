@@ -310,15 +310,8 @@ The missing `????` characters correspond to incomplete RadioText segment coverag
 ### 🖼️ Part B Summary Figure
 
 <p align="center">
-<img src="docs/results/part_b_rds_summary_radio_carolina_98_9.png" alt="Part B RDS summary for Radio Carolina 98.9 MHz" width="750">
+<img src="https://github.com/user-attachments/assets/07b9eab8-27b2-4126-922d-a2b9d7e4967b" alt="Part B RDS summary for Radio Carolina 98.9 MHz" width="750">
 </p>
-
-The full console logs are included in:
-
-```text
-docs/results/radio_carolina_98_9_part_a_console_output.txt
-docs/results/radio_carolina_98_9_part_b_console_output.txt
-```
 
 ## 📦 Python Dependencies
 
