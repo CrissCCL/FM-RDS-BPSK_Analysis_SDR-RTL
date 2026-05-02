@@ -1,0 +1,61 @@
+============================================================
+CONFIGURATION PART A
+============================================================
+STATION_MHZ: 98.900 MHz
+IQ file:     fm_rds_iq_98_9MHz.npz
+CAPTURE_NEW: True
+
+============================================================
+RTL-SDR CAPTURE
+============================================================
+Capturing 65.0 s at 98.900 MHz
+Fs RF = 2.048 MS/s, samples = 133120000
+Found Rafael Micro R828D tuner
+Progress: 100.0 %
+Readout completed.
+Capture saved as: fm_rds_iq_98_9MHz.npz
+
+============================================================
+PART A ANALYSIS
+============================================================
+============================================================
+PART A - PEDAGOGICAL RDS/BPSK ANALYSIS
+============================================================
+File:        fm_rds_iq_98_9MHz.npz
+FM station: 98.900 MHz
+Fs RF:      2.048 MS/s
+Gain:       30.0 dB
+Samples:    133120000
+FM demod + MPX at 228 kHz: 11.76 s
+MPX duration: 65.00 s
+RDS extraction 57 kHz -> 19 kHz (pilot^3 route): 20.84 s
+Estimated residual RDS offset, pilot^3 route: -0.86 Hz
+RDS search mode Part A: AUTO (generic when AUTO)
+Correlator candidates per route: 80
+AUTO: no station-specific parameters are prioritized.
+RDS routes: ['piloto_19k_al_cubo', 'oscilador_fijo_57k']
+
+------------------------------------------------------------
+RDS route Part A: piloto_19k_al_cubo
+------------------------------------------------------------
+Estimated residual offset in route piloto_19k_al_cubo: -0.86 Hz
+Candidate piloto_19k_al_cubo | sps=15.960, off=0.00: groups best mode=  4, groups all variants= 16, accumulated PS=????????
+Candidate piloto_19k_al_cubo | sps=15.960, off=1.00: groups best mode=  4, groups all variants= 16, accumulated PS=????LI??
+Candidate piloto_19k_al_cubo | sps=15.960, off=2.00: groups best mode=  4, groups all variants= 16, accumulated PS=????LINA
+Candidate piloto_19k_al_cubo | sps=15.960, off=3.00: groups best mode=  6, groups all variants= 24, accumulated PS=????LINA
+Candidate piloto_19k_al_cubo | sps=15.960, off=4.00: groups best mode=  8, groups all variants= 32, accumulated PS=CAROLINA
+Complete PS found in Part A. Search stopped.
+
+============================================================
+RDS VALIDATION
+============================================================
+Raw groups found:       104
+Consolidated groups:    13
+Note: raw groups are obtained by accumulating all inversion/differential
+      variants for each candidate, as in Part B.
+Dominant PI:            0xCB1A
+Partial/consolidated PS: CAROLINA
+Received PS segments:   [True, True, True, True]
+PS interpretation:      complete
+
+Total Part A time: 80.36 s

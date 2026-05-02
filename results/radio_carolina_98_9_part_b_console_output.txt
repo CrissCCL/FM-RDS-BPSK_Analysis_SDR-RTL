@@ -1,0 +1,115 @@
+============================================================
+PARTE B - DECODIFICACIÓN RDS CON CONTROL DE CAPTURA
+============================================================
+Carga NPZ: 1.87 s
+Archivo:      fm_rds_iq_98_9MHz.npz
+Estación FM: 98.900 MHz
+Fs RF:       2.048 MS/s
+Ganancia:    30.0 dB
+Muestras:    133120000
+Modo Parte B: búsqueda AUTO; se detiene según configuración PS/RT.
+STATION_MHZ configurado: 98.900 MHz
+
+Procesando FM...
+FM demod + resample a 228 kHz: 14.40 s
+Duración procesada: 65.00 s
+
+Extrayendo piloto y banda RDS...
+Extracción piloto/RDS: 13.51 s
+
+============================================================
+RUTA RDS: piloto_19k_al_cubo
+============================================================
+Ruta piloto_19k_al_cubo: RDS a 19 kHz + offset: 7.70 s
+Offset residual estimado: -0.86 Hz
+Duración RDS útil: 64.74 s
+
+Candidatos correlador adaptativo para piloto_19k_al_cubo:
+  candidato sps=15.980, off=0.00: 13.38 s
+    grupos= 48 ps=2 rt=7 tr=58.8% rel=0.78
+    acumulado PS='??RO??NA' segmentos=[False, True, False, True] RTseg=7
+  candidato sps=15.980, off=1.33: 13.19 s
+    grupos= 48 ps=3 rt=6 tr=58.7% rel=0.78
+    acumulado PS='CARO??NA' segmentos=[True, True, False, True] RTseg=8
+  candidato sps=15.980, off=2.67: 12.37 s
+    grupos= 40 ps=4 rt=5 tr=59.0% rel=0.78
+    acumulado PS='CAROLINA' segmentos=[True, True, True, True] RTseg=9
+    PS completo detectado.
+  candidato sps=15.980, off=4.00: 13.08 s
+    grupos= 40 ps=3 rt=6 tr=59.0% rel=0.78
+    acumulado PS='CAROLINA' segmentos=[True, True, True, True] RTseg=11
+    PS completo detectado.
+  candidato sps=15.980, off=5.33: 12.58 s
+    grupos= 36 ps=3 rt=4 tr=59.1% rel=0.78
+    acumulado PS='CAROLINA' segmentos=[True, True, True, True] RTseg=11
+    PS completo detectado.
+  candidato sps=15.980, off=6.67: 12.98 s
+    grupos= 60 ps=2 rt=6 tr=59.3% rel=0.78
+    acumulado PS='CAROLINA' segmentos=[True, True, True, True] RTseg=12
+    PS completo detectado.
+    PS completo y RT suficiente. Deteniendo búsqueda.
+Consolidación: 0.00 s
+
+============================================================
+RESULTADO GLOBAL - AUTO
+============================================================
+Total grupos brutos encontrados: 272
+
+Conteo de PI detectados:
+  0xCB1A: 272
+
+PI usado/dominante: 0xCB1A
+Grupos consolidados: 20
+
+PS por votación:
+  segmento 0: 'CA'  votos=1
+  segmento 1: 'RO'  votos=1
+  segmento 2: 'LI'  votos=1
+  segmento 3: 'NA'  votos=2
+
+PS consolidado: 'CAROLINA'
+Segmentos PS: [True, True, True, True]
+PS completo recuperado en una sola pasada.
+
+RadioText:
+  grupo 2A segmento 10: '??ol'
+  grupo 2A segmento 5: 'pp 5'
+  grupo 2A segmento 10: 'arol'
+  grupo 2A segmento 5: '?? 5'
+  grupo 2A segmento 4: 'atsa'
+  grupo 2A segmento 3: '??Wh'
+  grupo 2A segmento 8: '007 '
+  grupo 2A segmento 1: 'iben'
+  grupo 2A segmento 3: 'n Wh'
+  grupo 2A segmento 2: 'os u'
+  grupo 2A segmento 6: '69 6'
+  grupo 2A segmento 7: '1246'
+  grupo 2A segmento 12: '98.9'
+  grupo 2A segmento 0: 'Escr'
+  grupo 2A segmento 11: 'ina '
+RT consolidado: 'Escribenos un Whatsapp 569 61246007 ????arolina 98.9'
+Segmentos RT: [True, True, True, True, True, True, True, True, True, False, True, True, True, False, False, False]
+
+Grupos consolidados:
+  PI=0xCB1A | grupo=0B | B=0x0807 C=51994 D=0x4E41 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x200A C=---- D=0x6F6C | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2005 C=28784 D=0x2035 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=6.67,map=0,tr=59.3,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x200A C=24946 D=0x6F6C | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2005 C=---- D=0x2035 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=1.33,map=0,tr=58.7,rel=0.78
+  PI=0xCB1A | grupo=0B | B=0x0807 C=---- D=0x4E41 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=5.33,map=0,tr=59.1,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2004 C=24948 D=0x7361 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=0B | B=0x0802 C=51994 D=0x4C49 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=2.67,map=0,tr=59.0,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2003 C=---- D=0x5768 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=6.67,map=0,tr=59.3,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2008 C=12336 D=0x3720 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2001 C=26978 D=0x656E | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2003 C=28192 D=0x5768 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2002 C=28531 D=0x2075 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2006 C=13881 D=0x2036 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=2.67,map=0,tr=59.0,rel=0.78
+  PI=0xCB1A | grupo=0B | B=0x0800 C=51994 D=0x4341 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=1.33,map=0,tr=58.7,rel=0.78
+  PI=0xCB1A | grupo=0B | B=0x0801 C=51994 D=0x524F | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2007 C=12594 D=0x3436 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=4.00,map=0,tr=59.0,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x200C C=14648 D=0x2E39 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=4.00,map=0,tr=59.0,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x2000 C=17779 D=0x6372 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=0.00,map=0,tr=58.8,rel=0.78
+  PI=0xCB1A | grupo=2A | B=0x200B C=26990 D=0x6120 | err=0 | CORR piloto_19k_al_cubo sps=15.980,off=6.67,map=0,tr=59.3,rel=0.78
+
+Tiempo total: 115.87 s
