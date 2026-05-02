@@ -488,10 +488,9 @@ This project can be used in courses or workshops related to:
 ## 📚 References
 
 - GNU Radio – Official Documentation: [GNU Radio](https://www.gnuradio.org/)
-
 - Frequency Modulation (FM) – Wikipedia: [Wikipedia Frequency Modulation](https://en.wikipedia.org/wiki/Frequency_modulation)
-
 - FM broadcasting – Wikipedia: [FM broadcasting](https://en.wikipedia.org/wiki/FM_broadcasting)
+- RDS – Wikipedia: [RDS](https://en.wikipedia.org/wiki/Radio_Data_System)             
 
 
 ## ⚠️ Disclaimer
