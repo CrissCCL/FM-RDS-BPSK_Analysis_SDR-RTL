@@ -210,9 +210,6 @@ The most relevant figures are reserved in `figuras_rds_A/`. Replace the placehol
 
 ### 🧩 RDS Extraction Stages
 
-![RDS extraction stages](figuras_rds_A/A3_etapas_extraccion_rds.png)
-
-
 <p align="center">
 <img src="https://github.com/user-attachments/assets/e54c2d56-cbb1-4b4e-8ef2-809ece1f6817" alt="extraction" width="600">
 </p>
